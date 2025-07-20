@@ -20,4 +20,4 @@
 
 تم إعداد هذا المشروع ليُعرض مباشرة من خلال GitHub Pages.
  رابط للموقع مثل:
- <a href="https://naglaamossleh2016.github.io/student-affairs/">https://naglaamossleh2016.github.io/student-affairs/</a>
+ <a href="https://naglaamossleh2016.github.io/student-affairs/" target="_blank">https://naglaamossleh2016.github.io/student-affairs/</a>
