@@ -1,0 +1,362 @@
+/* --------------------- استيراد الخط --------------------- */
+@font-face {
+  font-family: 'GE_SS_Two_Medium';
+  src: url('../fonts/GE_SS_Two_Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --------------------- متغيرات عامة --------------------- */
+:root {
+  --primary-color: #0280a9;
+  --hover-color: #0290bf;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+  --white-color: #ffffff;
+
+  --input-border-color: #979797;
+  --input-fill-color: #f0f0f0;
+  --input-placeholder-color: #bfbdbd;
+
+  --font-size-base: 1rem;
+  --font-size-h2: 1.5rem;
+  --border-radius-base: 10px;
+
+  --dashboard-navbar-color: #01151b;
+  --dashboard-sidebar-color: #ddd;
+  --dashboard-sidebar-li-border: #eee;
+}
+
+/* --------------------- Reset --------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --------------------- Body --------------------- */
+body {
+  font-family: 'GE_SS_Two_Medium', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+
+/* --------------------- Header --------------------- */
+header {
+  background-color: var(--white-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin: 0;
+  text-align: center;
+}
+
+/* --------------------- قسم تسجيل الدخول --------------------- */
+.login-section {
+  flex: 1;
+  background: url('../images/bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* --------------------- البطاقة --------------------- */
+.card {
+  border-radius: var(--border-radius-base);
+  background-color: var(--white-color);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body h2 {
+  color: var(--primary-color);
+  font-size: var(--font-size-h2);
+}
+
+/* --------------------- الحقول --------------------- */
+input.form-control {
+  border-radius: 0 !important;
+  padding: 0.75rem;
+  background-color: var(--input-fill-color);
+  border: 1px solid var(--input-border-color);
+  color: var(--text-color) !important;
+}
+
+input.form-control::placeholder {
+  color: var(--input-placeholder-color) !important;
+}
+
+input.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.15rem rgba(2, 128, 169, 0.25);
+}
+
+/* --------------------- الأزرار --------------------- */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
+  border-radius: 0 !important;
+  padding: 0.6rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color) !important;
+  border-color: var(--hover-color) !important;
+}
+
+/* --------------------- الراديو والاختيارات --------------------- */
+.form-check-inline {
+  margin-right: 0 !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* --------------------- الروابط --------------------- */
+a {
+  color: var(--primary-color) !important;
+}
+
+a:hover {
+  color: var(--hover-color) !important;
+}
+
+/* --------------------- خط فاصل (Spacer) --------------------- */
+hr {
+  width: 50%;
+  margin: 0.5rem auto;
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  opacity: 0.6;
+}
+
+/* --------------------- الصفحة الرئيسية --------------------- */
+
+.main-content-section {
+  background: url('../images/bg.jpg') center/cover no-repeat;
+  flex: 1;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 12rem;
+}
+
+.main-content-section .container {
+  max-width: 100%;
+}
+
+.icon-card {
+  width: 100%;
+  max-width: 180px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.icon-card:hover {
+  transform: scale(1.05);
+}
+
+/* --------------------- صفحة لوحة التحكم --------------------- */
+
+/* Navbar */
+.dashboard-navbar {
+  
+  background-color: var(--dashboard-navbar-color);
+  color: var(--white-color);
+  height: 60px;
+}
+
+.dashboard-navbar i {
+  font-size: 2rem;
+}
+
+.navbar-title {
+  color: var(--white-color);
+  font-size: 1.2rem;
+}
+
+.username {
+  color: var(--white-color);
+  margin-left: 10px;
+}
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  width: 240px;
+  background-color: var(--white-color);
+  padding-right: 1rem;
+  border-left: 1px solid var(--dashboard-sidebar-color);
+  min-height: calc(100vh - 60px);
+}
+.dashboard-sidebar ul{
+  list-style: none;
+}
+.dashboard-sidebar ul li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--dashboard-sidebar-li-border);
+}
+
+.dashboard-sidebar ul li a {
+  text-decoration: none;
+  color: var(--text-color) !important;
+  font-weight: bold;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+
+.dashboard-sidebar ul li a:hover {
+  color: var(--primary-color) !important;
+  padding-right: 5px;
+}
+
+/* Main Content */
+.dashboard-main {
+  background: url('../images/bg.jpg') center/cover no-repeat;
+  padding: 2rem;
+  background-color: transparent;
+  min-height: calc(100vh - 60px);
+}
+
+/* Badges */
+.notifications .badge {
+  font-size: 0.65rem;
+  vertical-align: top;
+  margin-right: 2px;
+}
+.dashboard-navbar a {
+  color: var(--white-color) !important;
+  text-decoration: none;
+}
+.dashboard-navbar a:hover{
+  color: var(--primary-color) !important;
+}
+
+/* Burger Menu */
+.burger-menu {
+  color: var(--white-color) !important;
+}
+
+/* --------------------- (Responsive) --------------------- */
+
+/* إخفاء burger menu على الشاشات الكبيرة */
+@media (min-width: 992px) {
+  .burger-menu {
+    display: none;
+  }
+}
+
+/* تعديل البادينج والنصوص في الشاشات المتوسطة */
+@media (max-width: 992px) {
+  .main-content-section {
+    padding: 2rem 0rem;
+  }
+
+  .navbar-title {
+    display: none;
+  }
+  .exit-btn{
+    display: none;
+  }
+}
+
+/* شاشات صغيرة جداً */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    width: 60px;
+    height: auto;
+  }
+
+  .system-logo {
+    width: 30px;
+    height: auto;
+  }
+
+  .form-check-inline {
+    display: block !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-title,
+  .username {
+    font-size: 0.8rem;
+  }
+
+  .dashboard-navbar i {
+    font-size: 0.8rem;
+  }
+  
+
+  .notifications .badge {
+    font-size: 0.6rem;
+  }
+
+  header {
+    padding: 0.5rem;
+  }
+
+  .btn[data-bs-toggle="offcanvas"] {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* --------------------- Offcanvas (القائمة الجانبية للشاشات الصغيرة) --------------------- */
+.offcanvas-header .btn-close {
+  margin: 0 !important;
+}
+
+.offcanvas .offcanvas-title {
+  font-weight: bold;
+  color: var(--primary-color) !important;
+}
+
+.offcanvas ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--dashboard-sidebar-li-border);
+}
+
+.offcanvas ul li a {
+  text-decoration: none;
+  color: var(--text-color) !important;
+  font-size: 1rem;
+}
+
+.offcanvas ul li a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* --------------------- نهاية CSS --------------------- */
