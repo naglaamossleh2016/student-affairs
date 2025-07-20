@@ -10,6 +10,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
       alert('يرجى إدخال اسم المستخدم وكلمة المرور');
       return;
     }
- 
-    alert('تم تسجيل الدخول بنجاح!');
+  
+    
+      window.location.href = 'home.html';
   });
