@@ -1,0 +1,376 @@
+<!-- ملاحظة: هذه الصفحة مُجهزة لتحويلها إلى مكون Angular -->
+<!-- يمكن نقل كل HTML إلى dashboard.component.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <title>لوحة التحكم - إدارة شؤون الطلاب</title>
+
+  <!-- Bootstrap CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="dashboard-body">
+
+  <!-- Navbar -->
+  <nav class="navbar dashboard-navbar d-flex justify-content-between align-items-center px-3">
+    <div class="d-flex align-items-center gap-3">
+        <img src="assets/images/avatar.png" alt="مستخدم" class="user-avatar">
+        <span class="username">اسم المستخدم</span>
+        <div class="notifications">
+          <a href="#"><i class="bi bi-envelope-fill"></i><span class="badge bg-danger">3</span></a>
+          <a href="#"><i class="bi bi-bell-fill"></i><span class="badge bg-danger">5</span></a>
+        </div>
+        
+      </div>
+   
+    <h1 class="navbar-title m-0">إدارة شؤون الطلاب</h1>
+    <div class="d-flex align-items-center">
+        <button class="btn btn-link text-white text-decoration-none exit-btn">
+           <a href="index.html">خروج  <i class="bi bi-box-arrow-left  me-2"></i></a>
+        </button>
+           <!-- زر القائمة يظهر فقط في الشاشات الصغيرة -->
+        <a href="#" class="burger-menu" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas">
+            <i class="fas fa-bars fa-lg"></i> 
+        </a>
+      </div>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-wrapper d-flex">
+    
+  <!-- القائمة الجانبية كـ Offcanvas -->
+  <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="sidebarOffcanvas">
+    <div class="offcanvas-header justify-content-between">
+      <h5 class="offcanvas-title mb-0">القائمة</h5>
+      <button type="button" class="btn-close me-auto" data-bs-dismiss="offcanvas" aria-label="إغلاق"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled">
+        <li><a href="academic_year.html">الأعوام الأكاديمية</a></li>
+        <li><a href="academic_building.html">الهيكلة الأكاديمية</a></li>
+        <li><a href="study-list.html">اللائحة الدراسية</a></li>
+        <li><a href="study-groups-levels.html" class="active">السجلات الدراسية</a></li>
+        <li><a href="#">بيانات الطلاب</a></li>
+        <li><a href="#">البيانات الدراسية</a></li>
+        <li><a href="#">التشعيب الإلكتروني</a></li>
+        <li><a href="#">أرقام الجلوس</a></li>
+        <li><a href="#">لجان الإمتحانات</a></li>
+        <li><button class="btn btn-link text-white text-decoration-none">
+          <a href="index.html">خروج  <i class="bi bi-box-arrow-left  me-2"></i></a>
+       </button></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- القائمة الجانبية الأساسية للشاشات الكبيرة فقط -->
+  <aside class="dashboard-sidebar d-none d-lg-block">
+    <ul>
+      <li><a href="academic_year.html">الأعوام الأكاديمية</a></li>
+        <li><a href="academic_building.html">الهيكلة الأكاديمية</a></li>
+      <li><a href="study-list.html">اللائحة الدراسية</a></li>
+      <li><a href="study-groups-levels.html" class="active">السجلات الدراسية</a></li>
+      <li><a href="#">بيانات الطلاب</a></li>
+      <li><a href="#">البيانات الدراسية</a></li>
+      <li><a href="#">التشعيب الإلكتروني</a></li>
+      <li><a href="#">أرقام الجلوس</a></li>
+      <li><a href="#">لجان الإمتحانات</a></li>
+    </ul>
+  </aside>
+  
+
+     <!-- Main Area -->
+    <main class="dashboard-main flex-fill">
+      <!-- المحتوى الرئيسي هنا  -->
+<div class="wrapper container mt-3">
+  <!-- الفورمة -->
+  <form class="w-100">
+     <!-- اللائحة الدراسية -->
+    <div class="row mb-3">
+           <label class="col-sm-2 col-form-label">اللائحة الدراسية</label>
+      <div class="col-sm-4">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+
+       <div class="col-sm-1">
+        <button type="submit" class="btn new-btn">جديد</button>
+        </div>
+       </div>
+
+    <!-- الاسم + شهور الدور -->
+    <div class="row mb-3">
+      <label class="col-sm-1 col-form-label">الاسم</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+
+      <label class="col-sm-2 col-form-label">شهر الدور الأول</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">يناير</option>
+          <option value="2">مايو</option>
+          <option value="3">يونيو</option>
+          <option value="4">سبتمبر</option>
+        </select>
+      </div>
+
+            <label class="col-sm-2 col-form-label">شهر الدور الثاني</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">يناير</option>
+          <option value="2">مايو</option>
+          <option value="3">يونيو</option>
+          <option value="4">سبتمبر</option>
+        </select>
+      </div>
+    </div>
+
+ <!-- عدد ساعات الرسوب للدور الأول + متوسط النقاط -->
+   <div class="row mb-3">
+      <div class="col-sm-6 d-flex gap-4 align-items-center">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">عدد سـاعات الرسـوب للدور الأول</label>
+        </div>
+            <div class="col-sm-2">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+      <label class="form-check-label" for="gridRadios1">   ساعة</label>
+      </div>
+
+            <div class="col-sm-6 d-flex gap-4 align-items-center">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">متوسط النقاط</label>
+        </div>
+            <div class="col-sm-2">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+      <label class="form-check-label" for="gridRadios1">   نقطة</label>
+      </div>
+    </div>
+
+     <!-- عدد ساعات الرسوب للدور الثاني + متوسط النقاط -->
+   <div class="row mb-3">
+      <div class="col-sm-6 d-flex gap-4 align-items-center">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">عدد ساعات الرسوب للدور الثاني</label>
+        </div>
+            <div class="col-sm-2">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+      <label class="form-check-label" for="gridRadios1">   ساعة</label>
+      </div>
+
+            <div class="col-sm-6 d-flex gap-4 align-items-center">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">متوسط النقاط</label>
+        </div>
+            <div class="col-sm-2">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+      <label class="form-check-label" for="gridRadios1">   نقطة</label>
+      </div>
+    </div>
+
+  <!-- سنة نهائية + مشروع التخرج -->
+<div class="row mb-3">
+     <label class="col-sm-2 col-form-label">سنة نهائية</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">نعم</option>
+          <option value="2">لا</option>
+        </select>
+      </div>
+
+           <label class="col-sm-2 col-form-label">مشروع تخرج</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">نعم</option>
+          <option value="2">لا</option>
+        </select>
+      </div>
+
+</div>
+
+  <!-- عدد فرص البقاء -->
+<div class="row mb-3">
+     <label class="col-sm-4 col-form-label">عدد فرص البقاء من الداخل</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+
+           <label class="col-sm-4 col-form-label">عدد فرص البقاء من الخارج</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+
+</div>
+
+<!-- نقل الطلاب -->
+<div class="row mb-3">
+     <label class="col-sm-2 col-form-label">نقل الطلاب بدون نتيجة</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">نعم</option>
+          <option value="2">لا</option>
+        </select>
+      </div>
+
+           <label class="col-sm-2 col-form-label">نقل الطلاب بالنقاط</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">نعم</option>
+          <option value="2">لا</option>
+        </select>
+      </div>
+
+</div>
+
+<div class="row mb-3">
+   <label class="col-sm-4 col-form-label">الحد الأقصى للنقاط المحمل بها:</label>
+ 
+      <div class="col-sm-3 d-flex gap-4 align-items-center">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">نسبة</label>
+        </div>
+            <div class="col-sm-2">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+      <label class="form-check-label" for="gridRadios1">   %</label>
+      </div>
+
+            <div class="col-sm-3 d-flex gap-4 align-items-center">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">مجموع</label>
+        </div>
+            <div class="col-sm-2">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+      
+      </div>
+
+</div>
+
+
+  <!-- سنة سابقة وتالية -->
+<div class="row mb-3">
+     <label class="col-sm-2 col-form-label">سنة سابقة</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">لايوجد </option>
+          <option value="2">المستوى الأول</option>
+          <option value="3">المستوى الثاني</option>
+          <option value="4">المستوى الثالث</option>
+        </select>
+      </div>
+
+           <label class="col-sm-2 col-form-label">سنة تالية</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">لايوجد</option>
+          <option value="2">المستوى الأول</option>
+          <option value="3">المستوى الثاني</option>
+          <option value="4">المستوى الثالث</option>
+        </select>
+      </div>
+
+</div>
+
+  <!-- أسلوب حساب التراكمي -->
+<div class="row mb-3">
+     <label class="col-sm-4 col-form-label">أسلوب حساب التراكمي على المستويات</label>
+       <div class="col-sm-1">
+        <button type="submit" class="btn new-btn">اختيار</button>
+        </div>
+</div>
+
+  <!-- العبء الدراسي للفصل الدراسي -->
+<div class="row mb-3">
+     <label class="col-sm-4 col-form-label side-title">العبء الدراسي للفصل الدراسي:</label>
+</div>
+
+<div class="row mb-3">
+          <label class="col-sm-2 col-form-label">نوع الطالب</label>
+      <div class="col-sm-2">
+        <select class="form-select">
+          <option selected>اختر</option>
+          <option value="1">عادي </option>
+          <option value="2">مراقب علميًا</option>
+          <option value="3">خريج</option>
+        </select>
+</div>
+
+
+      <div class="col-sm-3 d-flex gap-4 align-items-center">
+        <label class="form-check-label" for="gridRadios2">من</label>
+          <div class="col-sm-3">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+      <label class="form-check-label" for="gridRadios1">   ساعة</label>
+
+      <label class="form-check-label" for="gridRadios2">إلى</label>
+          <div class="col-sm-3">
+        <input type="text" class="form-control" placeholder="">
+      </div>
+      <label class="form-check-label" for="gridRadios1">   ساعة</label>
+      </div>
+
+
+</div>
+
+
+
+
+    <!-- أزرار أسفل الفورمة -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <button type="submit" class="btn save-btn">حفظ</button>
+       <!--  <button type="reset" class="btn empty-btn">تفريغ الحقول</button> -->
+      </div>
+    </div>
+
+
+
+  </form>
+</div>
+    </main>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
