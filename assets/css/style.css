@@ -91,7 +91,7 @@ header {
 }
 
 /* --------------------- الحقول --------------------- */
-input.form-control {
+input.form-control2 {
   border-radius: 0 !important;
   padding: 0.75rem;
   background-color: var(--input-fill-color);
@@ -99,11 +99,11 @@ input.form-control {
   color: var(--text-color) !important;
 }
 
-input.form-control::placeholder {
+input.form-control2::placeholder {
   color: var(--input-placeholder-color) !important;
 }
 
-input.form-control:focus {
+input.form-control2:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 0.15rem rgba(2, 128, 169, 0.25);
 }
@@ -233,6 +233,11 @@ hr {
   display: block;
   transition: all 0.2s ease-in-out;
 }
+.dashboard-sidebar ul li a.active {
+  color: var(--primary-color) !important;
+  padding-right: 5px;
+}
+
 
 .dashboard-sidebar ul li a:hover {
   color: var(--primary-color) !important;
@@ -265,6 +270,172 @@ hr {
 .burger-menu {
   color: var(--white-color) !important;
 }
+
+/* --------------------- جديد محمد رمضان --------------------- */
+.modal-header .btn-close {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+  opacity: 1;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+}
+
+.buttons-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.wrapper {position: relative; min-width: 1000px; width: 96%; min-height: 400px;border-radius: 5px; margin: auto;
+margin-top: 20px; margin-bottom: 15px; overflow: hidden; padding: 20px ;  background-color: white; display: block; justify-content: center;
+align-items: center}
+
+
+.save-btn{
+  width: 120px;
+  font-size: 15px;
+  background-color: rgb(134, 3, 20);
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.save-btn:hover{background-color: rgb(245, 43, 70);  color: #fff;}
+
+.empty-btn{
+  width: 120px;
+  font-size: 15px;
+  background-color: rgb(5, 81, 168);
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.empty-btn:hover{background-color: rgb(53, 139, 238);  color: #fff;}
+
+.add-btn{
+  width: 120px;
+  color: #000;
+  background-color: #20c997;
+   border: none;
+  border-radius: 3px;
+}
+
+.add-btn:hover{background-color: #198754;  color: #fff;}
+.view-btn{
+  width: 120px;
+  color: #000;
+  background-color: #0dcaf0;
+   border: none;
+  border-radius: 3px;
+}
+
+.view-btn:hover{background-color:  #0280a9;  color: #fff;}
+.edit-btn{
+    width: 120px;
+  color: #000;
+  background-color: #ffc107;
+   border: none;
+  border-radius: 3px;
+}
+
+.edit-btn:hover{background-color: #fd7e14;  color: #000;}
+
+
+.radio-container { direction: rtl;}
+
+.form-check {
+    margin-right: 20px;
+}
+
+.form-check .form-check-input {
+    float: right;
+    margin-right: -1.50em;
+}
+
+.addition-btn{
+   width: 50px;
+   height: 40px;
+  color: #00fff0;
+  font-size: 20px;
+  background-color: #0280a9;
+   border: none;
+  border-radius: 3px;
+}
+
+.addition-btn:hover{background-color: #0dcaf0;}
+
+.side-title{color: rgb(165, 7, 2);}
+
+/* accordion */
+.accordion-button::after{
+  margin-left: 0;
+  margin-right: auto;
+}
+
+
+
+/* --------------------- جديد محمد رمضان --------------------- */
+
+.buttons-list{  gap: 20px;  padding: 10px;  margin-bottom: 0;}
+
+.add-button{display: flex; justify-content: center; align-items: center;}
+
+
+.search-btn {width: 120px;  color: #fff;  background-color: #6c757d;   border: none;  border-radius: 3px;}
+.search-btn:hover{background-color:  #5c636a;  color: #fff;}
+
+.save-btn{width: 120px;  font-size: 15px;  background-color: rgb(134, 3, 20);  border: none;  border-radius: 3px;  color: #fff;}
+.save-btn:hover{background-color: rgb(245, 43, 70);  color: #fff;}
+
+.delete-btn{width: 60px;  font-size: 12px;  background-color: rgb(134, 3, 20);  border: none;  border-radius: 3px;  color: #fff;}
+.delete-btn:hover{background-color: rgb(245, 43, 70);  color: #fff;}
+
+.empty-btn{width: 120px;  font-size: 15px;  background-color: rgb(5, 81, 168);  border: none;  border-radius: 3px;  color: #fff;}
+.empty-btn:hover{background-color: rgb(53, 139, 238);  color: #fff;}
+
+.add-btn{width: 120px;  color: #000;  background-color: #198754;   border: none;  border-radius: 3px;}
+.add-btn:hover{background-color:  #20c997;  color: #000;}
+
+.view-btn{width: 60px;  font-size: 12px; color: #000;  background-color: #0dcaf0;   border: none;  border-radius: 3px;}
+.view-btn:hover{background-color:  #0280a9;  color: #fff;}
+
+.edit-btn{width: 60px; font-size: 12px; color: #000;  background-color: #ffc107;   border: none;  border-radius: 3px;}
+.edit-btn:hover{background-color: #fd7e14;  color: #000;}
+
+.new-btn{width: 120px; font-size: 14px; color: #000;  background-color: #ffc107;   border: none;  border-radius: 3px;}
+.new-btn:hover{background-color: #fd7e14;  color: #000;}
+
+.radio-container { direction: rtl;}
+
+.form-check {    margin-right: 20px;}
+
+.form-check .form-check-input {    float: right;    margin-right: -1.50em;}
+
+.addition-btn{   width: 50px;   height: 40px;  color: #00fff0;  font-size: 20px;  background-color: #0280a9;   border: none;
+  border-radius: 3px;}
+.addition-btn:hover{background-color: #0dcaf0;}
+
+.side-title{color: rgb(165, 7, 2);}
+
+.data_table  {margin-top: 30px;}
+.data_table  table{  width: 100%;  border: 1px solid rgb(114, 113, 113);  border-collapse: collapse;  border-radius: 30px; }
+.data_table table caption{ font-weight: 100;  font-size: 16px; padding: 0;}
+.data_table table th{background-color:#026174; color: #ffff; font-weight: 100;}
+.data_table table th, .data_table table td{border: 1px solid black;  text-align: center;}
+.data_table .action_btns{ display: flex;align-items: center; justify-content: center; padding: 5px;}
+.data_table .action_btns .edit_btn, .data_table .action_btns .delete_btn{color: #fff; border: none; border-radius: 3px;
+font-family: "GE SS Two"; font-size: 12px; font-weight: 100; text-align: center;align-items: center; text-decoration: none; 
+padding: 2px 4px; transition: 0.7s ease; width: 80px; height: 26px;  margin-left: 10px;}
+
+.table-check{margin-right: 70px; padding-left: 0;}
+
 
 /* --------------------- (Responsive) --------------------- */
 
@@ -332,6 +503,10 @@ hr {
     font-size: 0.95rem;
     padding: 0.4rem 0.6rem;
   }
+
+
+  .wrapper { min-width: 500px; width: 70%; min-height: 400px;}
+
 }
 
 /* --------------------- Offcanvas (القائمة الجانبية للشاشات الصغيرة) --------------------- */
@@ -340,7 +515,7 @@ hr {
 }
 
 .offcanvas .offcanvas-title {
-  font-weight: bold;
+  font-weight: 100;
   color: var(--primary-color) !important;
 }
 
